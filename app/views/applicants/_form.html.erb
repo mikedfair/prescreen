@@ -12,38 +12,38 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :firstname %><br>
-    <%= f.text_field :firstname %>
+    <%= f.label :firstname, "First Name" %><br>
+    <%= f.text_field :firstname, class: "form-control input-lg" %>
   </div>
   <div class="field">
-    <%= f.label :lastname %><br>
-    <%= f.text_field :lastname %>
+    <%= f.label :lastname, "Last Name" %><br>
+    <%= f.text_field :lastname, class: "form-control input-lg" %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.label :email, "Email Address" %><br>
+    <%= f.text_field :email, class: "form-control input-lg" %>
   </div>
   <div class="field">
-    <%= f.label :birthday %><br>
-    <%= f.date_select :birthday, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 18, end_year: Date.today.year - 100} %>
+    <%= f.label :birthday, "Birthday" %><br>
+    <%= f.date_select :birthday, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 18, end_year: Date.today.year - 100}, class: "form-control input-lg" %>
   </div>
   <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone, class: "form-control" %> FORMAT 555-555-5555
+    <%= f.label :phone, "Phone Number - FORMAT 555-555-5555" %><br>
+    <%= f.text_field :phone, class: "form-control input-lg" %>
   </div>
   <div class="field">
-    <%= f.label :internet, "Do uou have high speed internet?" %><br>
-    <%= f.select :internet, options_for_select([['Yes','yes'],['No','no']]), :include_blank => true %>
+    <%= f.label :internet, "Do you have high speed internet?" %><br>
+    <%= f.select :internet, options_for_select([['Yes','yes'],['No','no']]), :include_blank => true, class: "form-control input-lg" %>
   </div>
   <div class="field">
-    <%= f.label :skypehandle %><br>
-    <%= f.text_field :skypehandle %>
+    <%= f.label :skypehandle, "Skype Username (Optional)" %><br>
+    <%= f.text_field :skypehandle, class: "form-control input-lg" %>
   </div>
     <div class="field">
     <%= f.label :adis, "CraigsList Ad ID" %><br>
-    <%= f.text_field :adid %>
+    <%= f.text_field :adid, class: "form-control input-lg" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-danger btn-lg' %>
   </div>
 <% end %>

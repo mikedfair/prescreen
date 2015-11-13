@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Applicants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+      <th>Birthday</th>
+      <th>Phone</th>
+      <th>Phonesvc</th>
+      <th>Internet</th>
+      <th>Internetsvc</th>
+      <th>Skypehandle</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @applicants.each do |applicant| %>
+      <tr>
+        <td><%= applicant.firstname %></td>
+        <td><%= applicant.lastname %></td>
+        <td><%= applicant.email %></td>
+        <td><%= applicant.birthday %></td>
+        <td><%= applicant.phone %></td>
+        <td><%= applicant.phonesvc %></td>
+        <td><%= applicant.internet %></td>
+        <td><%= applicant.internetsvc %></td>
+        <td><%= applicant.skypehandle %></td>
+        <td><%= link_to 'Show', applicant %></td>
+        <td><%= link_to 'Edit', edit_applicant_path(applicant) %></td>
+        <td><%= link_to 'Destroy', applicant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Applicant', new_applicant_path %>

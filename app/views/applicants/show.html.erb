@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @applicant.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @applicant.lastname %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @applicant.email %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @applicant.birthday %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @applicant.phone %>
+</p>
+
+<p>
+  <strong>Phonesvc:</strong>
+  <%= @applicant.phonesvc %>
+</p>
+
+<p>
+  <strong>Internet:</strong>
+  <%= @applicant.internet %>
+</p>
+
+<p>
+  <strong>Internetsvc:</strong>
+  <%= @applicant.internetsvc %>
+</p>
+
+<p>
+  <strong>Skypehandle:</strong>
+  <%= @applicant.skypehandle %>
+</p>
+
+<%= link_to 'Edit', edit_applicant_path(@applicant) %> |
+<%= link_to 'Back', applicants_path %>

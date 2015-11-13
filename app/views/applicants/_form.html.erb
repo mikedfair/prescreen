@@ -1,0 +1,49 @@
+<%= form_for(@applicant) do |f| %>
+  <% if @applicant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@applicant.errors.count, "error") %> prohibited this applicant from being saved:</h2>
+
+      <ul>
+      <% @applicant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :firstname %><br>
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :lastname %><br>
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br>
+    <%= f.date_select :birthday, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 18, end_year: Date.today.year - 100} %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone, class: "form-control" %> FORMAT 555-555-5555
+  </div>
+  <div class="field">
+    <%= f.label :internet, "Do uou have high speed internet?" %><br>
+    <%= f.select :internet, options_for_select([['Yes','yes'],['No','no']]), :include_blank => true %>
+  </div>
+  <div class="field">
+    <%= f.label :skypehandle %><br>
+    <%= f.text_field :skypehandle %>
+  </div>
+    <div class="field">
+    <%= f.label :adis, "CraigsList Ad ID" %><br>
+    <%= f.text_field :adid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -6,6 +6,7 @@
       <table class="table table-hover">
         <thead>
           <tr>
+            <th>CraigsList Ad ID</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
@@ -14,8 +15,7 @@
             <th>Phone</th>
             <th>High Speed Internet></th>
             <th>Skype Handle</th>
-            <th>CraigsList Ap ID</th>
-            <th colspan="1"></th>
+            <th colspan="2"></th>
             <th><strong><center>Edit</center></strong></th>
             <th><strong><center>Delete</center></strong></th>
           </tr>
@@ -24,6 +24,7 @@
         <tbody>
         <% @applicants.each do |applicant| %>
           <tr>
+            <td><center><%= applicant.adid %></center></td>
             <td><%= applicant.firstname %></td>
             <td><%= applicant.lastname %></td>
             <td><%= applicant.email %></td>

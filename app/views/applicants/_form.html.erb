@@ -28,8 +28,12 @@
                                     prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, 
                                     start_year: Date.today.year - 18, end_year: Date.today.year - 100}, class: "form-control date-select input-lg" %>
   </div>
+    <div class="field">
+    <%= f.label :phonesvc, "Do you have a smartphone?" %><br>
+    <%= f.select :phonesvc, options_for_select([['Yes','Yes'],['No','No']]), {:include_blank => true}, {class: "form-control"} %>
+  </div>
   <div class="field">
-    <%= f.label :phone, "Phone Number - FORMAT 555-555-5555" %><br>
+    <%= f.label :phone, "Phone Number (FORMAT ###-###-####)" %><br>
     <%= f.text_field :phone, class: "form-control input-lg" %>
   </div>
   <div class="field">
@@ -45,7 +49,7 @@
     <%= f.text_field :adid, class: "form-control input-lg" %>
   </div>
   <div class="actions">
-    <%= f.submit class: 'btn btn-danger btn-lg' %>
+    <%= f.submit "Submit Form", class: "button" %>
   </div>
 <% end %>
 </div>

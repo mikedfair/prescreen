@@ -1,42 +1,55 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Applicants</h1>
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading text-center"><h2><strong>All Applicants</strong></h2></div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Birthday</th>
+            <th>Smart Phone?</th>
+            <th>Phone</th>
+            <th>High Speed Internet></th>
+            <th>Skype Handle</th>
+            <th>CraigsList Ap ID</th>
+            <th colspan="1"></th>
+            <th><strong><center>Edit</center></strong></th>
+            <th><strong><center>Delete</center></strong></th>
+          </tr>
+        </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Email</th>
-      <th>Birthday</th>
-      <th>Phone</th>
-      <th>Phonesvc</th>
-      <th>Internet</th>
-      <th>Internetsvc</th>
-      <th>Skypehandle</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @applicants.each do |applicant| %>
-      <tr>
-        <td><%= applicant.firstname %></td>
-        <td><%= applicant.lastname %></td>
-        <td><%= applicant.email %></td>
-        <td><%= applicant.birthday %></td>
-        <td><%= applicant.phone %></td>
-        <td><%= applicant.phonesvc %></td>
-        <td><%= applicant.internet %></td>
-        <td><%= applicant.internetsvc %></td>
-        <td><%= applicant.skypehandle %></td>
-        <td><%= link_to 'Show', applicant %></td>
-        <td><%= link_to 'Edit', edit_applicant_path(applicant) %></td>
-        <td><%= link_to 'Destroy', applicant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+        <% @applicants.each do |applicant| %>
+          <tr>
+            <td><%= applicant.firstname %></td>
+            <td><%= applicant.lastname %></td>
+            <td><%= applicant.email %></td>
+            <td><%= applicant.birthday.to_s(:long) %></td>
+            <td><center><%= applicant.phonesvc %></center></td>
+            <td><%= applicant.phone %></td>
+            <td><center><%= applicant.internet %></center></td>
+            <td><%= applicant.internetsvc %></td>
+            <td><%= applicant.skypehandle %></td>
+            <td><%= link_to 'Show', applicant %></td>
+            <td><center>
+              <%= link_to edit_applicant_path(applicant) do %>
+                <span class="glyphicon glyphicon-pencil" %></span>
+              <% end %>
+            </center></td>
+            <td><center>
+              <%= link_to applicant, method: :delete, data: { confirm: 'Are you sure? This cannot be undone!' } do %>
+                <span class="glyphicon glyphicon-remove" %></span>
+              <% end %>
+            </center></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>    
 
 <br>
 

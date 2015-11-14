@@ -6,6 +6,7 @@ class Applicant < ActiveRecord::Base
                                         uniqueness: { case_sensitive: false },
                                         format: { with: VALID_EMAIL_REGEX }
     validates :birthday, presence:true
+    validates :phonesvc, presence:true
     validates :phone, presence:true, format: { with: /\d{3}-\d{3}-\d{4}/, message: "bad format" }
     validates :internet, presence:true
     validates :adid, presence:true

@@ -1,13 +1,13 @@
 body {
   background-color: #fff;
   color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
@@ -70,4 +70,9 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+.date-select { 
+    display: inline-block;
+    width: 32%;
 }

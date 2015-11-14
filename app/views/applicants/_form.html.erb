@@ -14,8 +14,6 @@
   <div class="field">
     <%= f.label :firstname, "First Name" %><br>
     <%= f.text_field :firstname, class: "form-control input-lg" %>
-  </div>
-  <div class="field">
     <%= f.label :lastname, "Last Name" %><br>
     <%= f.text_field :lastname, class: "form-control input-lg" %>
   </div>
@@ -24,8 +22,10 @@
     <%= f.text_field :email, class: "form-control input-lg" %>
   </div>
   <div class="field">
-    <%= f.label :birthday, "Birthday" %><br>
-    <%= f.date_select :birthday, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 18, end_year: Date.today.year - 100}, class: "form-control input-lg" %>
+    <%= f.label :birthday, "Birthday (Must Be 18)" %><br>
+    <%= f.date_select :birthday,  {order: [:month, :day, :year], 
+                                    prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, 
+                                    start_year: Date.today.year - 18, end_year: Date.today.year - 100}, class: "form-control date-select input-lg" %>
   </div>
   <div class="field">
     <%= f.label :phone, "Phone Number - FORMAT 555-555-5555" %><br>
@@ -33,14 +33,14 @@
   </div>
   <div class="field">
     <%= f.label :internet, "Do you have high speed internet?" %><br>
-    <%= f.select :internet, options_for_select([['Yes','yes'],['No','no']]), :include_blank => true, class: "form-control input-lg" %>
+    <%= f.select :internet, options_for_select([['Yes','yes'],['No','no']]), {:include_blank => true}, {class: "form-control"} %>
   </div>
   <div class="field">
     <%= f.label :skypehandle, "Skype Username (Optional)" %><br>
     <%= f.text_field :skypehandle, class: "form-control input-lg" %>
   </div>
     <div class="field">
-    <%= f.label :adis, "CraigsList Ad ID" %><br>
+    <%= f.label :adis, "CraigsList Ad ID (Found on original CraigsList AD and email sent to you)" %><br>
     <%= f.text_field :adid, class: "form-control input-lg" %>
   </div>
   <div class="actions">

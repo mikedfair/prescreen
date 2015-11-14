@@ -29,7 +29,7 @@ class ApplicantsController < ApplicationController
 
     respond_to do |format|
       if @applicant.save
-        format.html { redirect_to custom_success_path, notice: 'Applicant was successfully created.' }
+        format.html { redirect_to custom_success_path }
         format.json { render :show, status: :created, location: @applicant }
       else
         format.html { render :new }

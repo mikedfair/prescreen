@@ -70,6 +70,6 @@ class ApplicantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def applicant_params
-      params.require(:applicant).permit(:firstname, :lastname, :email, :birthday, :phone, :phonesvc, :internet, :internetsvc, :skype, :skypehandle, :adid)
+      params.require(:applicant).permit(:firstname, :lastname, :email, :birthday, :phone, :phonesvc, :internet, :internetsvc, :skype, :skypehandle, :adid, :process)
     end
 end

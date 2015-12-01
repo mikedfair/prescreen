@@ -2,32 +2,217 @@
 
 <div class="container">
   <div class="panel panel-default">
-    <div class="panel-heading text-center"><h2><strong>All Applicants</strong></h2></div>
+    <div class="panel-heading text-center"><h2><strong>Prescreen</strong></h2></div>
       <table class="table table-hover">
-        <thead>
-          <tr>
-            <th>CraigsList Ad ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Birthday</th>
-            <th>Smart Phone?</th>
-            <th>Phone</th>
-            <th>High Speed Internet></th>
-            <th>Skype Handle</th>
-            <th colspan="2"></th>
-            <th><strong><center>Edit</center></strong></th>
-            <th><strong><center>Delete</center></strong></th>
-          </tr>
-        </thead>
-
+        <%= render 'display' %>
         <tbody>
         <% @applicants.each do |applicant| %>
+          <% if applicant.process == "prescreen" %>
+        
           <tr>
             <td><center><%= applicant.adid %></center></td>
             <td><%= applicant.firstname %></td>
             <td><%= applicant.lastname %></td>
-            <td><%= applicant.email %></td>
+            <td><%= mail_to applicant.email %></td>
+            <td><%= applicant.birthday.to_s(:long) %></td>
+            <td><center><%= applicant.phonesvc %></center></td>
+            <td><%= applicant.phone %></td>
+            <td><center><%= applicant.internet %></center></td>
+            <td><%= applicant.internetsvc %></td>
+            <td><%= applicant.skypehandle %></td>
+            <td><%= link_to 'Show', applicant %></td>
+            <td><center>
+              <%= link_to edit_applicant_path(applicant) do %>
+                <span class="glyphicon glyphicon-pencil" %></span>
+              <% end %>
+            </center></td>
+            <td><center>
+              <%= link_to applicant, method: :delete, data: { confirm: 'Are you sure? This cannot be undone!' } do %>
+                <span class="glyphicon glyphicon-remove" %></span>
+              <% end %>
+            </center></td>
+          </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading text-center"><h2><strong>Application Submitted</strong></h2></div>
+      <table class="table table-hover">
+        <%= render 'display' %>
+        
+        <tbody>
+        <% @applicants.each do |applicant| %>
+          <% if applicant.process == "application" %>
+        
+          <tr>
+            <td><center><%= applicant.adid %></center></td>
+            <td><%= applicant.firstname %></td>
+            <td><%= applicant.lastname %></td>
+            <td><%= mail_to applicant.email %></td>
+            <td><%= applicant.birthday.to_s(:long) %></td>
+            <td><center><%= applicant.phonesvc %></center></td>
+            <td><%= applicant.phone %></td>
+            <td><center><%= applicant.internet %></center></td>
+            <td><%= applicant.internetsvc %></td>
+            <td><%= applicant.skypehandle %></td>
+            <td><%= link_to 'Show', applicant %></td>
+            <td><center>
+              <%= link_to edit_applicant_path(applicant) do %>
+                <span class="glyphicon glyphicon-pencil" %></span>
+              <% end %>
+            </center></td>
+            <td><center>
+              <%= link_to applicant, method: :delete, data: { confirm: 'Are you sure? This cannot be undone!' } do %>
+                <span class="glyphicon glyphicon-remove" %></span>
+              <% end %>
+            </center></td>
+          </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading text-center"><h2><strong>Part One</strong></h2></div>
+      <table class="table table-hover">
+        <%= render 'display' %>
+
+        <tbody>
+        <% @applicants.each do |applicant| %>
+          <% if applicant.process == "part1" %>
+        
+          <tr>
+            <td><center><%= applicant.adid %></center></td>
+            <td><%= applicant.firstname %></td>
+            <td><%= applicant.lastname %></td>
+            <td><%= mail_to applicant.email %></td>
+            <td><%= applicant.birthday.to_s(:long) %></td>
+            <td><center><%= applicant.phonesvc %></center></td>
+            <td><%= applicant.phone %></td>
+            <td><center><%= applicant.internet %></center></td>
+            <td><%= applicant.internetsvc %></td>
+            <td><%= applicant.skypehandle %></td>
+            <td><%= link_to 'Show', applicant %></td>
+            <td><center>
+              <%= link_to edit_applicant_path(applicant) do %>
+                <span class="glyphicon glyphicon-pencil" %></span>
+              <% end %>
+            </center></td>
+            <td><center>
+              <%= link_to applicant, method: :delete, data: { confirm: 'Are you sure? This cannot be undone!' } do %>
+                <span class="glyphicon glyphicon-remove" %></span>
+              <% end %>
+            </center></td>
+          </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading text-center"><h2><strong>Part Two</strong></h2></div>
+      <table class="table table-hover">
+        <%= render 'display' %>
+
+        <tbody>
+        <% @applicants.each do |applicant| %>
+          <% if applicant.process == "part2" %>
+        
+          <tr>
+            <td><center><%= applicant.adid %></center></td>
+            <td><%= applicant.firstname %></td>
+            <td><%= applicant.lastname %></td>
+            <td><%= mail_to applicant.email %></td>
+            <td><%= applicant.birthday.to_s(:long) %></td>
+            <td><center><%= applicant.phonesvc %></center></td>
+            <td><%= applicant.phone %></td>
+            <td><center><%= applicant.internet %></center></td>
+            <td><%= applicant.internetsvc %></td>
+            <td><%= applicant.skypehandle %></td>
+            <td><%= link_to 'Show', applicant %></td>
+            <td><center>
+              <%= link_to edit_applicant_path(applicant) do %>
+                <span class="glyphicon glyphicon-pencil" %></span>
+              <% end %>
+            </center></td>
+            <td><center>
+              <%= link_to applicant, method: :delete, data: { confirm: 'Are you sure? This cannot be undone!' } do %>
+                <span class="glyphicon glyphicon-remove" %></span>
+              <% end %>
+            </center></td>
+          </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading text-center"><h2><strong>Approved</strong></h2></div>
+      <table class="table table-hover">
+        <%= render 'display' %>
+
+        <tbody>
+        <% @applicants.each do |applicant| %>
+          <% if applicant.process == "approved" %>
+        
+          <tr>
+            <td><center><%= applicant.adid %></center></td>
+            <td><%= applicant.firstname %></td>
+            <td><%= applicant.lastname %></td>
+            <td><%= mail_to applicant.email %></td>
+            <td><%= applicant.birthday.to_s(:long) %></td>
+            <td><center><%= applicant.phonesvc %></center></td>
+            <td><%= applicant.phone %></td>
+            <td><center><%= applicant.internet %></center></td>
+            <td><%= applicant.internetsvc %></td>
+            <td><%= applicant.skypehandle %></td>
+            <td><%= link_to 'Show', applicant %></td>
+            <td><center>
+              <%= link_to edit_applicant_path(applicant) do %>
+                <span class="glyphicon glyphicon-pencil" %></span>
+              <% end %>
+            </center></td>
+            <td><center>
+              <%= link_to applicant, method: :delete, data: { confirm: 'Are you sure? This cannot be undone!' } do %>
+                <span class="glyphicon glyphicon-remove" %></span>
+              <% end %>
+            </center></td>
+          </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading text-center"><h2><strong>All Applicants</strong></h2></div>
+      <table class="table table-hover">
+        <%= render 'display' %>
+
+        <tbody>
+        <% @applicants.each do |applicant| %>
+        
+          <tr>
+            <td><center><%= applicant.adid %></center></td>
+            <td><%= applicant.firstname %></td>
+            <td><%= applicant.lastname %></td>
+            <td><%= mail_to applicant.email %></td>
             <td><%= applicant.birthday.to_s(:long) %></td>
             <td><center><%= applicant.phonesvc %></center></td>
             <td><%= applicant.phone %></td>

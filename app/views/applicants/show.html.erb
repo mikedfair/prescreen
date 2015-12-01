@@ -45,5 +45,10 @@
   <%= @applicant.skypehandle %>
 </p>
 
+<p>
+  <strong>Application Process:</strong>
+  <%= @applicant.process %>
+</p>
+
 <%= link_to 'Edit', edit_applicant_path(@applicant) %> |
 <%= link_to 'Back', applicants_path %>

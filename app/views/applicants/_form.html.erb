@@ -30,7 +30,8 @@
   </div>
     <div class="field">
     <%= f.label :phonesvc, "Do you have a smartphone?" %><br>
-    <%= f.select :phonesvc, options_for_select([['Yes','Yes'],['No','No']]), {:include_blank => true}, {class: "form-control"} %>
+    <%= f.text_field :phonesvc, {class: "form-control input-lg"} unless @applicant.new_record? %>
+    <%= f.select :phonesvc, options_for_select([['Yes','Yes'],['No','No']]), {:include_blank => @applicant.phonesvc}, {class: "form-control input-lg"} if @applicant.new_record? %>
   </div>
   <div class="field">
     <%= f.label :phone, "Phone Number (FORMAT ###-###-####)" %><br>
@@ -38,7 +39,8 @@
   </div>
   <div class="field">
     <%= f.label :internet, "Do you have high speed internet?" %><br>
-    <%= f.select :internet, options_for_select([['Yes','yes'],['No','no']]), {:include_blank => true}, {class: "form-control"} %>
+    <%= f.text_field :internet, {class: "form-control input-lg"} unless @applicant.new_record? %>
+    <%= f.select :internet, options_for_select([['Yes','yes'],['No','no']]), {:include_blank => @applicant.internet}, {class: "form-control input-lg"} if @applicant.new_record? %>
   </div>
   <div class="field">
     <%= f.label :skypehandle, "Skype Username (Optional)" %><br>
@@ -47,6 +49,10 @@
     <div class="field">
     <%= f.label :adis, "CraigsList Ad ID (Found on original CraigsList AD and email sent to you.)" %><br>
     <%= f.text_field :adid, class: "form-control input-lg" %>
+  </div>
+  <div class="field">
+    <%= f.label :process, "Application Process" %><br>
+    <%= f.select :process, options_for_select([['Prescreen','prescreen'],['Application','application'],['Part 1','part1'],['Part 2','part2'],['Approved','approved']]), {:include_blank => @applicant.process }, {class: "form-control input-lg"} unless @applicant.new_record? %>
   </div>
   <div class="actions">
     <%= f.submit "Submit Form", class: "button" %>

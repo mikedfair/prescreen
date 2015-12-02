@@ -51,7 +51,8 @@
     <%= f.text_field :adid, class: "form-control input-lg" %>
   </div>
   <div class="field">
-    <%= f.label :process, "Application Process" %><br>
+    <%= f.label :process, "Application Process" unless @applicant.new_record? %><br>
+    <%= f.text_field :process, {:value => "prescreen" } if @applicant.new_record? %>
     <%= f.select :process, options_for_select([['Prescreen','prescreen'],['Application','application'],['Part 1','part1'],['Part 2','part2'],['Approved','approved']]), {:include_blank => @applicant.process }, {class: "form-control input-lg"} unless @applicant.new_record? %>
   </div>
   <div class="actions">

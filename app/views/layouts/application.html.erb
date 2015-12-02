@@ -43,6 +43,13 @@
       <div class="container">
         <div class="navbar-brand" href="#">xHub Pre Qualification</div>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
+          <!-- Navbar for logged in admins -->
+          <% if current_user %>
+            <ul class="nav navbar-nav">
+              <li><%= link_to 'All Applicants', applicants_path %> </a></li>
+              <li><a href="#">Active Processors (Coming Soon)</a></li>
+            </ul>
+          <% end %>
           <ul class="nav navbar-right col-md-4">
             <% if current_user %>
               <li class="col-md-8 user-name">
@@ -61,7 +68,7 @@
         </div>
       </div>
     </div>
-
+    
     <div class="container">
       <div class="row">
         <div class="col-lg-9">
